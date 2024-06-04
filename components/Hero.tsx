@@ -87,7 +87,7 @@ const Hero: React.FC<HeroProps> = ({ id }) => {
               cursor: "pointer",
               zIndex: 50000,
             }}
-            onClick={() => window.open("https://wa.me/917023463344", "_blank")}
+            onClick={() => window.open("https://wa.me/919336093367", "_blank")}
           >
             <FaWhatsapp />
           </button>
