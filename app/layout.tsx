@@ -1,31 +1,27 @@
-// Import necessary modules
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Head from "next/head"; // Use Head from Next.js for managing head elements
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 
-// Initialize the Inter font
 const inter = Inter({ subsets: ["latin"] });
 
-// Define metadata
-const metadata: Metadata = {
+export const metadata = {
   title: "Affordable Web & App Development | Black Box Devspace",
   description: "Black Box Devspace specializes in creating professional websites and applications within budget. Expert web development and application services to help your business thrive online. Located in Croatia, we offer tailored solutions to meet your business needs.",
   keywords: "affordable web development, budget web development, professional websites, application development, Black Box Devspace, web and app development, custom web applications, Croatia, web development services Croatia, app development services Croatia",
   robots: "index, follow",
 };
 
-// RootLayout component
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <Head>
+    <html lang="en" suppressHydrationWarning>
+      <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
@@ -34,7 +30,7 @@ export default function RootLayout({
         <meta property="og:description" content={metadata.description} />
         <meta property="og:type" content="website" />
         {/* Add other Open Graph meta tags as needed */}
-      </Head>
+      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
@@ -45,6 +41,6 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
       </body>
-    </>
+    </html>
   );
 }
