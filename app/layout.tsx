@@ -1,12 +1,15 @@
+// Import necessary modules
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Head from "next/head"; // Import Head component from Next.js for managing head elements
+import Head from "next/head"; // Use Head from Next.js for managing head elements
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 
+// Initialize the Inter font
 const inter = Inter({ subsets: ["latin"] });
 
+// Define metadata
 const metadata: Metadata = {
   title: "Affordable Web & App Development | Black Box Devspace",
   description: "Black Box Devspace specializes in creating professional websites and applications within budget. Expert web development and application services to help your business thrive online. Located in Croatia, we offer tailored solutions to meet your business needs.",
@@ -14,6 +17,7 @@ const metadata: Metadata = {
   robots: "index, follow",
 };
 
+// RootLayout component
 export default function RootLayout({
   children,
 }: Readonly<{
