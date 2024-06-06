@@ -6,15 +6,11 @@ import { ThemeProvider } from "./provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Affordable Web & App Development | Black Box Devspace",
   description: "Black Box Devspace specializes in creating professional websites and applications within budget. Expert web development and application services to help your business thrive online. Located in Croatia, we offer tailored solutions to meet your business needs.",
   keywords: "affordable web development, budget web development, professional websites, application development, Black Box Devspace, web and app development, custom web applications, Croatia, web development services Croatia, app development services Croatia",
-  author: "Black Box Devspace",
-  "og:title": "Affordable Web & App Development | Black Box Devspace",
-  "og:description": "Expert web and application development services in Croatia. Black Box Devspace offers affordable and professional solutions to help your business thrive online.",
-  "og:type": "website",
-  "robots": "index, follow",
+  robots: "index, follow",
 };
 
 
@@ -25,9 +21,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/jsm-logo.png" sizes="any" />
-      </head>
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
+        <meta name="robots" content={metadata.robots} />
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        <meta property="og:type" content="website" />
+        {/* Add other Open Graph meta tags as needed */}
+      </Head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
