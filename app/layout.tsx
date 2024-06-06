@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Head>
+      <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
@@ -30,7 +30,7 @@ export default function RootLayout({
         <meta property="og:description" content={metadata.description} />
         <meta property="og:type" content="website" />
         {/* Add other Open Graph meta tags as needed */}
-      </Head>
+      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
